@@ -8,9 +8,18 @@
 
     <script>
         var WORDS     = ["booger", "apple", "hackbright", "mango"];
-        var SCRAMBLED = ["oogreb", "papel", "backrhight", "goman"];
+        var SCRAMBLED = [];
+
+        for (var i=0; i < WORDS.length; i++) {
+            
+
+        }
+
+
+        // var SCRAMBLED = ["oogreb", "papel", "backrhight", "goman"];
 
         var playing = true;
+
 
         while (playing) {
 
@@ -24,6 +33,9 @@
 
             // prompt the user to guess the original word when given the scrambled word
             var userGuess = prompt("Guess what this random scrambled word is: " + randomScrambled);
+
+            userGuess = userGuess.trim().toLowerCase();
+            console.log("This is userGUess: "+userGuess);
 
 
             if (userGuess === randomWord) {
