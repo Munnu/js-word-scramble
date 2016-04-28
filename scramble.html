@@ -15,19 +15,31 @@
         while (playing) {
 
             // Grab a random word from the WORDS array
-
+            var randomIndex = Math.floor(Math.random() * WORDS.length);
+            var randomWord = WORDS[randomIndex];
             // Grab the corresponding scrambled word from the SCRAMBLED array
+            var randomScrambled = SCRAMBLED[randomIndex];
+            console.log(randomWord);
+            console.log(randomScrambled);
 
             // prompt the user to guess the original word when given the scrambled word
+            var userGuess = prompt("Guess what this random scrambled word is: " + randomScrambled);
 
-            // If the user guesses wrong, tell them they were wrong and the right word.
+
+            if (userGuess === randomWord) {
+                // If the user guesses the correct word, congratulate them.
+                alert("Congratulations");
+
+            } else {
+                // If the user guesses wrong, tell them they were wrong and the right word.          
+                alert("Sorry, that was wrong. Your word was: " + randomWord);
+            }
             
-            // If the user guesses the correct word, congratulate them.
 
+            // ask the user whether or not to continue ret (t/f)
             playing = confirm("Press OK To keep playing or Cancel to quit");
-
-            // What does confirm() return?
             // What does setting the playing variable do?
+            // A: it ends the while loop execution if they hit cancel
         }
 
         alert("goodbye!");
